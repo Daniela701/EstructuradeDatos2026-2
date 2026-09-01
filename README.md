@@ -1,3 +1,4 @@
+Nombre Estudiante: Daniela Andrea Gallego Díaz
 Matriz 100.000 × 100.000 en disco
 
 Descripción
