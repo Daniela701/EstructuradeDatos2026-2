@@ -34,6 +34,8 @@ La esquina superior izquierda se visualiza como:
 
 El programa también muestra una sección del centro y otra de la esquina inferior derecha para comprobar el acceso a diferentes posiciones de la matriz.
 
+Cada fila de la matriz se almacena consecutivamente en el archivo binario y al finalizar cada fila se escribe un valor separador de tipo int, en este caso -1. De esta manera se puede identificar dónde termina cada fila y comienza la siguiente. Como el separador ocupa el mismo tamaño que un int, cada fila ocupa 400.004 bytes. Esto también permite calcular mediante seekg() la posición de cualquier fila.
+
 Tecnologías
 
 * C++

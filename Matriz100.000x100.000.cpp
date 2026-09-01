@@ -7,23 +7,32 @@ const int TAM = 10;
 
 // Crear la matriz
 void crearmatriz() {
-
     ofstream archivo("matriz.bin", ios::binary);
-
     if (!archivo) {
         cout << "No se pudo crear el archivo." << endl;
         return;
     }
 
     int* fila = new int[N];
+    int separador = -1;
 
     for (int i = 0; i < N; i++) {
+
+        // Crear la fila
         for (int j = 0; j < N; j++) {
             fila[j] = i + j;
         }
+
+        // Escribir la fila en el archivo
         archivo.write(
             reinterpret_cast<char*>(fila),
             N * sizeof(int)
+        );
+
+        // Escribir el separador al final de la fila
+        archivo.write(
+            reinterpret_cast<char*>(&separador),
+            sizeof(int)
         );
     }
 
@@ -33,13 +42,23 @@ void crearmatriz() {
 
 
 // Mostrar una sección de la matriz
-void mostrarSeccion(ifstream& archivo, int filaInicio, int columnaInicio) {
+void mostrarSeccion(
+    ifstream& archivo,
+    int filaInicio,
+    int columnaInicio
+) {
 
     int* fila = new int[N];
+
+    // Recorrer las filas que queremos mostrar
     for (int i = filaInicio; i < filaInicio + TAM; i++) {
-        // Ir directamente a la fila i
+
+        // Cada fila ocupa:
+        // N enteros + 1 separador
         archivo.seekg(
-            static_cast<long long>(i) * N * sizeof(int),
+            static_cast<long long>(i) *
+            (N + 1) *
+            sizeof(int),
             ios::beg
         );
 
@@ -50,7 +69,11 @@ void mostrarSeccion(ifstream& archivo, int filaInicio, int columnaInicio) {
         );
 
         // Mostrar solamente las columnas necesarias
-        for (int j = columnaInicio; j < columnaInicio + TAM; j++) {
+        for (
+            int j = columnaInicio;
+            j < columnaInicio + TAM;
+            j++
+        ) {
             cout << fila[j] << "\t";
         }
 
@@ -58,6 +81,7 @@ void mostrarSeccion(ifstream& archivo, int filaInicio, int columnaInicio) {
     }
 
     delete[] fila;
+
     cout << endl;
 }
 
@@ -67,7 +91,7 @@ int main() {
     // Crear la matriz
     crearmatriz();
 
-    // Abrir el archivo
+    // Abrir el archivo para lectura
     ifstream archivo("matriz.bin", ios::binary);
 
     if (!archivo) {
@@ -84,7 +108,7 @@ int main() {
     mostrarSeccion(archivo, 0, 0);
 
 
-    // Centro
+    // Centro de la matriz
     cout << "Centro de la matriz:\n";
     mostrarSeccion(archivo, 50000, 50000);
 
