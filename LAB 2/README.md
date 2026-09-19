@@ -82,17 +82,16 @@ T5 = Eve -> Alice: 7
 
 Como hay un número impar de transacciones, T5 se duplica:
 
-                           RAÍZ
-                         /      \
-                      H1234     H55
-                      /   \     / \
-                    H12   H34  H5  H5
-                   /  \   /  \
-                 H1   H2 H3   H4
-                 │    │  │    │
-                 T1   T2 T3   T4
-                             
-                         T5 → T5
+                              RAÍZ
+                            /      \
+                         H1234     H55
+                        /    \     /  \
+                      H12    H34  H5  H5
+                     /  \    / \   ↑   ↑
+                    H1  H2  H3 H4  │   │
+                    │   │   │  │   │   │
+                    T1  T2  T3 T4  T5  T5
+                                  (duplicada)
 
 De forma simplificada:
 
