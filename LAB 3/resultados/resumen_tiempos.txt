@@ -1,0 +1,69 @@
+RESUMEN DE TIEMPOS DE BÚSQUEDA
+======================================================================
+
+ORDEN DE INSERCIÓN: ALEATORIO
+----------------------------------------------------------------------
+
+Lista
+N=    10 | promedio=0.1557 us | desv=0.0027 us | CV=1.73%
+N=    50 | promedio=0.4912 us | desv=0.0058 us | CV=1.19%
+N=   100 | promedio=1.0026 us | desv=0.0180 us | CV=1.79%
+N=   500 | promedio=4.4837 us | desv=0.0421 us | CV=0.94%
+N=  1000 | promedio=9.4856 us | desv=0.1293 us | CV=1.36%
+N=  2500 | promedio=23.2463 us | desv=0.2605 us | CV=1.12%
+N=  5000 | promedio=45.9876 us | desv=0.5475 us | CV=1.19%
+N= 10000 | promedio=88.5966 us | desv=0.9227 us | CV=1.04%
+
+ABB
+N=    10 | promedio=0.1709 us | desv=0.0091 us | CV=5.34%
+N=    50 | promedio=0.2935 us | desv=0.0276 us | CV=9.42%
+N=   100 | promedio=0.3339 us | desv=0.0065 us | CV=1.95%
+N=   500 | promedio=0.5109 us | desv=0.0172 us | CV=3.36%
+N=  1000 | promedio=0.6209 us | desv=0.0081 us | CV=1.31%
+N=  2500 | promedio=0.7435 us | desv=0.0298 us | CV=4.01%
+N=  5000 | promedio=0.8461 us | desv=0.0215 us | CV=2.54%
+N= 10000 | promedio=0.9247 us | desv=0.0527 us | CV=5.70%
+
+B+
+N=    10 | promedio=0.1174 us | desv=0.0014 us | CV=1.15%
+N=    50 | promedio=0.1701 us | desv=0.0023 us | CV=1.36%
+N=   100 | promedio=0.1783 us | desv=0.0013 us | CV=0.74%
+N=   500 | promedio=0.1947 us | desv=0.0003 us | CV=0.15%
+N=  1000 | promedio=0.2451 us | desv=0.0031 us | CV=1.26%
+N=  2500 | promedio=0.2739 us | desv=0.0011 us | CV=0.41%
+N=  5000 | promedio=0.3064 us | desv=0.0086 us | CV=2.79%
+N= 10000 | promedio=0.3227 us | desv=0.0117 us | CV=3.63%
+
+ORDEN DE INSERCIÓN: ORDENADO
+----------------------------------------------------------------------
+
+Lista
+N=    10 | promedio=0.1532 us | desv=0.0016 us | CV=1.03%
+N=    50 | promedio=0.4751 us | desv=0.0035 us | CV=0.74%
+N=   100 | promedio=0.8761 us | desv=0.0032 us | CV=0.37%
+N=   500 | promedio=4.3050 us | desv=0.0428 us | CV=0.99%
+N=  1000 | promedio=9.7945 us | desv=0.0456 us | CV=0.47%
+N=  2500 | promedio=25.8696 us | desv=0.2226 us | CV=0.86%
+N=  5000 | promedio=53.2085 us | desv=1.9046 us | CV=3.58%
+N= 10000 | promedio=111.5928 us | desv=2.4073 us | CV=2.16%
+
+ABB
+N=    10 | promedio=0.2278 us | desv=0.0021 us | CV=0.91%
+N=    50 | promedio=0.9420 us | desv=0.0028 us | CV=0.30%
+N=   100 | promedio=1.8308 us | desv=0.0052 us | CV=0.29%
+N=   500 | promedio=10.2127 us | desv=0.0808 us | CV=0.79%
+N=  1000 | promedio=22.9860 us | desv=0.1452 us | CV=0.63%
+N=  2500 | promedio=59.1474 us | desv=0.3050 us | CV=0.52%
+N=  5000 | promedio=119.5215 us | desv=0.9023 us | CV=0.75%
+N= 10000 | promedio=250.4303 us | desv=2.8207 us | CV=1.13%
+
+B+
+N=    10 | promedio=0.1162 us | desv=0.0015 us | CV=1.26%
+N=    50 | promedio=0.1672 us | desv=0.0009 us | CV=0.53%
+N=   100 | promedio=0.1733 us | desv=0.0004 us | CV=0.24%
+N=   500 | promedio=0.1915 us | desv=0.0003 us | CV=0.14%
+N=  1000 | promedio=0.2391 us | desv=0.0009 us | CV=0.39%
+N=  2500 | promedio=0.2651 us | desv=0.0122 us | CV=4.59%
+N=  5000 | promedio=0.2819 us | desv=0.0036 us | CV=1.28%
+N= 10000 | promedio=0.3471 us | desv=0.0035 us | CV=1.02%
+

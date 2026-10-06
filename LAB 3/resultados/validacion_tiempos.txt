@@ -1,0 +1,11 @@
+VALIDACIÓN DE DURACIÓN DE LAS MEDICIONES
+============================================================
+
+Total de mediciones de búsqueda: 240
+Mediciones >= 1 s: 200
+Mediciones < 1 s: 40
+Porcentaje >= 1 s: 83.33%
+Tiempo mínimo: 0.001718 s
+Tiempo máximo: 232.848628 s
+
+Las mediciones inferiores a 1 s no se eliminan automáticamente. Se conservan porque forman parte del experimento y permiten documentar los casos en los que aumentar M produciría costos excesivos en otras estructuras.
