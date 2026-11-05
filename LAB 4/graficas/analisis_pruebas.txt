@@ -1,0 +1,13 @@
+
+ANÁLISIS DE LAS PRUEBAS
+-----------------------
+Pruebas ejecutadas: 11 -> todas pasan
+El Quadtree devuelve lo mismo que la fuerza bruta (100 consultas aleatorias por prueba).
+Casos borde probados: puntos sobre las líneas de división, puntos repetidos, ubicación fuera de la ciudad, radio 0 y k mayor que n.
+
+Ejemplo con ubicación (5000, 5000) metros:
+- Radio de 500 m: 69 puntos (Quadtree) y 69 (fuerza bruta) -> coinciden
+- Punto más cercano a 31.6 m -> coincide con fuerza bruta
+- 5 vecinos más cercanos: el último está a 131.0 m -> coinciden con fuerza bruta
+
+Gráficas guardadas en graficas/: range_search.png, punto_mas_cercano.png, vecinos_cercanos.png
