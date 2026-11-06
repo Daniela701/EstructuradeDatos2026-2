@@ -55,13 +55,21 @@ buscar_k_cercanos(arbol, 5000, 5000, 5, [])     # los 5 más cercanos
 
 ## Análisis comparativo
 
+La búsqueda por radio presenta una ventaja primero, ya que el Quadtree puede descartar los cuadrantes que se encuentran fuera del área de búsqueda.
+
+En la búsqueda del punto más cercano, la ventaja aparece con una cantidad un poco mayor de puntos, debido a que se deben explorar las regiones que podrían contener un punto más cercano al candidato encontrado.
+
+Por último, la búsqueda de los cinco puntos más cercanos necesita una cantidad mayor de datos para superar a la fuerza bruta, porque debe mantener varios candidatos y explorar las regiones que podrían contener mejores resultados.
+
+En general, los resultados muestran que el Quadtree puede mejorar el rendimiento de las tres operaciones evaluadas, especialmente cuando aumenta la cantidad de puntos.
+
 > **¿Para qué tamaño de datos el Quadtree comienza a ser más rápido que la fuerza bruta?**
 
 Medido en Python (ambos métodos), tiempo promedio por consulta. Los valores exactos cambian de una ejecución a otra y según la máquina; los completos están en `graficas/analisis_resultados.txt`:
 
-- **Búsqueda por radio**: el árbol gana desde unos **20 puntos**.
-- **Punto más cercano**: desde unos **50 puntos**. **5 más cercanos**: desde unos **100 puntos**.
+- **Búsqueda por radio**: el árbol gana desde unos **15 puntos**.
+- **Punto más cercano**: desde unos **40 puntos**. **5 más cercanos**: desde unos **50 puntos**.
 - Con n ≤ 8 el árbol es una sola hoja y equivale a fuerza bruta.
-- Con **n = 10.000**: la búsqueda por radio es unas 30 veces más rápida, el punto más cercano unas 250 veces y los 5 más cercanos unas 200 veces.
-- Construir el árbol con 10.000 puntos tarda ≈ 11–15 ms; se compensa tras unas 8 consultas de radio.
-- La fuerza bruta crece linealmente con n; el árbol crece mucho más despacio.
+- Con **n = 10.000**: la búsqueda por radio es unas 35 veces más rápida, el punto más cercano unas 148 veces y los 5 más cercanos unas 110 veces.
+- Construir el Quadtree con 10.000 puntos tarda aproximadamente **9 ms**. Este costo inicial se compensa después de unas **6 consultas por radio**, por lo que resulta conveniente cuando se realizan varias búsquedas sobre el mismo conjunto de puntos.
+- La fuerza bruta presenta un crecimiento lineal con respecto a la cantidad de puntos, ya que debe revisar todos los elementos en cada consulta. En cambio, el Quadtree puede descartar cuadrantes completos que no contienen resultados relevantes, por lo que su crecimiento es mucho más lento en las condiciones evaluadas.
